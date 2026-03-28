@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_cinza"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo_maya"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="Logo Maya RPG"
+        android:src="@drawable/maya_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:drawable/btn_default"/>
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Bem-vindo(a) à Maya RPG"
+        android:textAlignment="center"
+        android:textColor="@color/maya_marrom_escuro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_maya" />
+
+    <TextView
+        android:id="@+id/bio_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Especialista em Reeducação Postural Global. Transformando vidas através do movimento consciente e alívio das dores. Agende sua avaliação e comece seu tratamento."
+        android:textAlignment="center"
+        android:textColor="@color/maya_marrom_escuro"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/agendar_button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:padding="16dp"
+        android:text="AGENDAR SESSÃO"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:backgroundTint="@color/maya_ciano"
+        app:cornerRadius="8dp"
+        app:elevation="4dp"
+        app:icon="@drawable/ic_calendar_add"
+        app:iconGravity="textStart"
+        app:iconSize="24dp"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/historico_button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:padding="16dp"
+        android:text="MEU PRONTUÁRIO"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:backgroundTint="@color/maya_terracota"
+        app:cornerRadius="8dp"
+        app:elevation="4dp"
+        app:icon="@drawable/ic_clipboard"
+        app:iconGravity="textStart"
+        app:iconSize="24dp"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agendar_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
