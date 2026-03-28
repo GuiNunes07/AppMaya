@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMaya3GL">
         <activity
+            android:name=".activityExercicios"
+            android:exported="false" />
+        <activity
             android:name=".AgendamentoActivity"
             android:exported="false" />
         <activity
