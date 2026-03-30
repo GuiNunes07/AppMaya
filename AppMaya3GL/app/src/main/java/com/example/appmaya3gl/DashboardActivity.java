@@ -15,12 +15,7 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // =========================================================================
-        // 1. INICIALIZAÇÃO DOS COMPONENTES VISUAIS (Find Views)
-        // Conectamos as variáveis do Java com os IDs que desenhamos no XML.
-        // =========================================================================
-
-        // Cartões grandes do meio da tela
+        // Cartões no meio da tela
         MaterialCardView cardExercicios = findViewById(R.id.card_dicas);
         MaterialCardView cardProntuario = findViewById(R.id.card_prontuario);
         MaterialCardView cardAgendar = findViewById(R.id.card_agendar);
@@ -28,16 +23,11 @@ public class DashboardActivity extends AppCompatActivity {
         // A Barra de Navegação Inferior (NAV)
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
 
-        // =========================================================================
-        // 2. PROGRAMAÇÃO DOS CLIQUES: CARTÕES CENTRAIS (Cards)
-        // Definimos o que acontece quando o usuário toca nos cartões grandes.
-        // =========================================================================
-
+        // 2. Cards (Programação)
         // Clique no cartão grande "Meus Exercícios"
         cardExercicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre a tela de carrossel de exercícios
                 Intent intentExercicioCard = new Intent(DashboardActivity.this, activityExercicios.class);
                 startActivity(intentExercicioCard);
             }
@@ -47,7 +37,6 @@ public class DashboardActivity extends AppCompatActivity {
         cardProntuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre a tela de prontuário
                 Intent intentProntuarioCard = new Intent(DashboardActivity.this, ProntuarioActivity.class);
                 startActivity(intentProntuarioCard);
             }
@@ -57,40 +46,26 @@ public class DashboardActivity extends AppCompatActivity {
         cardAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre a tela de Calendário
                 Intent intentAgendarCard = new Intent(DashboardActivity.this, AgendamentoActivity.class);
                 startActivity(intentAgendarCard);
             }
         });
 
-        // =========================================================================
-        // 3. PROGRAMAÇÃO DOS CLIQUES: MENU INFERIOR (NAV)
-        // IMPORTANTE: Este bloco está solto diretamente no onCreate, o que faz com
-        // que ele funcione assim que o aplicativo abrir, independentemente de
-        // qual cartão o usuário clicou antes.
-        // =========================================================================
-
         bottomNav.setOnItemSelectedListener(item -> {
 
-            // Verifica se o ícone clicado foi o de "Exercícios" (o pesinho)
+            // Verifica se o ícone clicado foi o de "Exercícios"
             if (item.getItemId() == R.id.nav_exercicios) {
-                // Abre a tela de exercícios pelo NAV
                 Intent intentNavExercicios = new Intent(DashboardActivity.this, activityExercicios.class);
                 startActivity(intentNavExercicios);
                 return true; // Retorna true para avisar o Android que o clique foi processado
             }
 
-            // ✅ ADICIONEI ESTE BLOCO AQUI PARA O PRONTUÁRIO FUNCIONAR ✅
-            // Verifica se o ícone clicado foi o de "Prontuário" (o reloginho)
+            // Verifica se o ícone clicado foi o de "Prontuário"
             if (item.getItemId() == R.id.nav_historico) { // Verifique se o ID está certinho!
-                // Abre a tela de prontuário pelo NAV
                 Intent intentNavProntuario = new Intent(DashboardActivity.this, ProntuarioActivity.class);
                 startActivity(intentNavProntuario);
                 return true; // Retorna true para avisar o Android que o clique foi processado
             }
-
-            // (No futuro, você pode colocar outros "if" aqui para programar o ícone de Início ou Configurações)
-
             return false; // Retorna false caso o ícone clicado não tenha uma ação programada
         });
     }

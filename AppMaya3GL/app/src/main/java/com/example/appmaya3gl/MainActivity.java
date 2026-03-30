@@ -1,44 +1,63 @@
 package com.example.appmaya3gl;
 
-// TUDO DAQUI PARA BAIXO É O CÓDIGO NOVO COLADO
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
-
-    // 1. Criamos uma variável para representar o botão
-    private MaterialButton btnHistorico;
-    private MaterialButton btnAgendar; // O botão de agendar que adicionamos depois
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Isso carrega o visual da tela principal
+        setContentView(R.layout.activity_main);
 
-        // 2. Conectamos a variável Java com o botão real lá do XML através do ID
-        btnHistorico = findViewById(R.id.historico_button);
-        btnAgendar = findViewById(R.id.agendar_button);
+        // Componentes visuais //
+        MaterialCardView cardAgendar = findViewById(R.id.card_agendar_inicial);
+        MaterialCardView cardAreaPaciente = findViewById(R.id.card_area_paciente);
+        MaterialButton btnSejaPaciente = findViewById(R.id.btn_seja_paciente);
 
-        // 3. Clique do Histórico (Vai para o Dashboard)
-        btnHistorico.setOnClickListener(new View.OnClickListener() {
+        // Animação //
+        Animation slideUp = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+        slideUp.setDuration(1200);
+
+        // Aplica a animação nos três elementos da tela //
+        cardAgendar.startAnimation(slideUp);
+        cardAreaPaciente.startAnimation(slideUp);
+        btnSejaPaciente.startAnimation(slideUp); // Botão animado também!
+
+        // Para conhecimento: - Programação dos cliques, abaixo //
+
+        // Clique para ir para a tela de Agendamento
+        cardAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                startActivity(intent);
+                Intent intentAgendamento = new Intent(MainActivity.this, AgendamentoActivity.class);
+                startActivity(intentAgendamento);
             }
         });
 
-        // 4. Clique do Agendar (Vai para o Agendamento)
-        btnAgendar.setOnClickListener(new View.OnClickListener() {
+        // Clique para ir para a Área do Paciente //
+        cardAreaPaciente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AgendamentoActivity.class);
-                startActivity(intent);
+                Intent intentDashboard = new Intent(MainActivity.this, DashboardActivity.class);
+                startActivity(intentDashboard);
+            }
+        });
+
+        // Clique do botão novo: Seja Paciente //
+        btnSejaPaciente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Como não temos a tela de cadastro, mostramos uma mensagem de acolhimento (DEVE CONTER CONTINUAÇÃO, NÃO ESQUECER) //
+                Toast.makeText(MainActivity.this, "Iniciando cadastro de novo paciente...", Toast.LENGTH_SHORT).show();
             }
         });
     }
 }
-

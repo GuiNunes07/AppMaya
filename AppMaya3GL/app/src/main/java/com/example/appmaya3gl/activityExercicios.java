@@ -13,19 +13,16 @@ public class activityExercicios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercicios);
 
-        // 1. Encontramos o botão lá do seu XML pelo ID dele
         MaterialButton btnConcluir = findViewById(R.id.btn_concluir_exercicio);
 
-        // 2. Criamos o "ouvinte" de cliques para ele
         btnConcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 3. Criamos e mostramos a mensagem de sucesso!
+                // Mensagem de conclusão.
                 Toast.makeText(activityExercicios.this,
                         "Parabéns! Exercício concluído com sucesso.",
                         Toast.LENGTH_LONG).show();
 
-                // 4. Fechamos a tela de exercícios para o paciente voltar ao Dashboard
                 finish();
             }
         });

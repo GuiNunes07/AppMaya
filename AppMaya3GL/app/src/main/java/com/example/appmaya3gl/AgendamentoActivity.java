@@ -22,12 +22,12 @@ public class AgendamentoActivity extends AppCompatActivity {
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mostra uma mensagem rápida na tela
+                // Mostra uma mensagem na tela
                 android.widget.Toast.makeText(AgendamentoActivity.this,
                         "Agendamento realizado com sucesso!",
                         android.widget.Toast.LENGTH_LONG).show();
 
-                // Opcional: Voltar para o Dashboard após agendar
+                // Voltar para o Dashboard após agendar --
                 finish();
             }
         });
