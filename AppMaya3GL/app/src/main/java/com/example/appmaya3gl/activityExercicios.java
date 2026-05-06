@@ -1,5 +1,6 @@
 package com.example.appmaya3gl;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast; // Importamos a ferramenta de mensagens
@@ -13,16 +14,21 @@ public class activityExercicios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercicios);
 
+        android.widget.TextView btnVoltar = findViewById(R.id.btn_voltar2);
         MaterialButton btnConcluir = findViewById(R.id.btn_concluir_exercicio);
 
         btnConcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mensagem de conclusão.
-                Toast.makeText(activityExercicios.this,
-                        "Parabéns! Exercício concluído com sucesso.",
-                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(activityExercicios.this, activityExercicios2.class);
+                startActivity(intent);
 
+            }
+        });
+        btnVoltar.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                // Fecha a tela de exercícios e volta
                 finish();
             }
         });

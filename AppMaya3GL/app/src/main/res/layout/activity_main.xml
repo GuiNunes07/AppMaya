@@ -110,7 +110,7 @@
         android:id="@+id/card_area_paciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="200dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp"
@@ -157,18 +157,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_seja_paciente"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:text="Ainda não é paciente? Cadastre-se"
-        android:textColor="#E0E0E0"
-        android:textSize="12sp"
-        app:rippleColor="#40FFFFFF" />
 
 </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

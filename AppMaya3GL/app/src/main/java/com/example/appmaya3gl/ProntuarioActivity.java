@@ -2,31 +2,28 @@ package com.example.appmaya3gl;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.button.MaterialButton;
 
 public class ProntuarioActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 1. Carrega o visual correto
         setContentView(R.layout.activity_prontuario);
 
-        MaterialButton btnDownload1 = findViewById(R.id.btn_download_relatorio_1);
-        btnDownload1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ProntuarioActivity.this, "Baixando Relatório PDF...", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // 2. Vincula o botão de voltar
+        TextView btnVoltar = findViewById(R.id.btn_voltar3);
 
-        MaterialButton btnDownload2 = findViewById(R.id.btn_download_relatorio_2);
-        btnDownload2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ProntuarioActivity.this, "Iniciando download do PDF...", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // 3. Adicionamos uma "proteção" aqui. Só tenta clicar se o botão realmente existir
+        if (btnVoltar != null) {
+            btnVoltar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish(); // Fecha a tela e volta
+                }
+            });
+        }
     }
 }

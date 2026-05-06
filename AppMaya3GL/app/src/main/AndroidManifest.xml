@@ -12,6 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMaya3GL">
         <activity
+            android:name=".activityCadastro"
+            android:exported="false" />
+        <activity
+            android:name=".activityLogin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Demais telas (Exported = false) -->
+        <activity
+            android:name=".activityConfiguracoes"
+            android:exported="false" />
+        <activity
+            android:name=".activityEvolucao"
+            android:exported="false" />
+        <activity
+            android:name=".activityExercicios3"
+            android:exported="false" />
+        <activity
+            android:name=".activityExercicios2"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProntuarioActivity"
             android:exported="false" />
         <activity
@@ -25,13 +52,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

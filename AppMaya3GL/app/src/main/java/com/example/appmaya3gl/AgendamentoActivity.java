@@ -18,11 +18,21 @@ public class AgendamentoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_agendamento);
-        MaterialButton btnConfirmar = findViewById(R.id.btn_confirmar_agendamento);
+
+        com.google.android.material.button.MaterialButton btnConfirmar = findViewById(R.id.btn_confirmar_agendamento);
+        android.widget.TextView btnVoltar = findViewById(R.id.btn_voltar);
+
+        btnVoltar.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                // Fecha a tela atual e volta para a anterior
+                finish();
+            }
+        });
+
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mostra uma mensagem na tela
                 android.widget.Toast.makeText(AgendamentoActivity.this,
                         "Agendamento realizado com sucesso!",
                         android.widget.Toast.LENGTH_LONG).show();

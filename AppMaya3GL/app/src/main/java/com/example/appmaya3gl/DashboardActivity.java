@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.bottomnavigation.BottomNavigationView; // Adicionei essa importação
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -15,16 +15,22 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Cartões no meio da tela
+        // =====================================================================
+        // 1. VINCULANDO OS ELEMENTOS DA TELA
+        // =====================================================================
         MaterialCardView cardExercicios = findViewById(R.id.card_dicas);
         MaterialCardView cardProntuario = findViewById(R.id.card_prontuario);
         MaterialCardView cardAgendar = findViewById(R.id.card_agendar);
+        android.widget.ImageView fotoPerfil = findViewById(R.id.iv_profile_pic);
+        android.widget.TextView btnVoltar = findViewById(R.id.btn_voltar4);
+        android.widget.ImageView btnConfiguracoes = findViewById(R.id.iv_settings);
 
-        // A Barra de Navegação Inferior (NAV)
+        // Mantemos apenas UMA variável para a barra inferior
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
 
-        // 2. Cards (Programação)
-        // Clique no cartão grande "Meus Exercícios"
+        // =====================================================================
+        // 2. CLIQUES NOS CARTÕES GIGANTES DO MEIO DA TELA
+        // =====================================================================
         cardExercicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +39,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        // Clique no cartão grande "Meu Prontuário"
         cardProntuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +47,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        // Clique no cartão grande "Agendar Sessão"
         cardAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,22 +55,64 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        // =====================================================================
+        // 3. CLIQUES NO TOPO (Botão de Voltar e Foto de Perfil)
+        // =====================================================================
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Fecha a tela
+            }
+        });
+
+        fotoPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentPerfil = new Intent(DashboardActivity.this, PerfilActivity.class);
+                startActivity(intentPerfil);
+            }
+        });
+
+        // =====================================================================
+        // 4. MENU INFERIOR (Toda a lógica unificada aqui!)
+        // =====================================================================
         bottomNav.setOnItemSelectedListener(item -> {
 
-            // Verifica se o ícone clicado foi o de "Exercícios"
-            if (item.getItemId() == R.id.nav_exercicios) {
+            int idClicado = item.getItemId();
+
+            // Clicou em Exercícios
+            if (idClicado == R.id.nav_exercicios) {
                 Intent intentNavExercicios = new Intent(DashboardActivity.this, activityExercicios.class);
                 startActivity(intentNavExercicios);
-                return true; // Retorna true para avisar o Android que o clique foi processado
+                return true;
             }
 
-            // Verifica se o ícone clicado foi o de "Prontuário"
-            if (item.getItemId() == R.id.nav_historico) { // Verifique se o ID está certinho!
+            // Clicou em Prontuário
+            else if (idClicado == R.id.nav_historico) {
                 Intent intentNavProntuario = new Intent(DashboardActivity.this, ProntuarioActivity.class);
                 startActivity(intentNavProntuario);
-                return true; // Retorna true para avisar o Android que o clique foi processado
+                return true;
             }
-            return false; // Retorna false caso o ícone clicado não tenha uma ação programada
+
+            // Clicou em Perfil
+            else if (idClicado == R.id.nav_perfil) {
+                Intent intentPerfil = new Intent(DashboardActivity.this, PerfilActivity.class);
+                startActivity(intentPerfil);
+                return true;
+            }
+
+            // DICA: Se você tiver o botão "Início/Dashboard", você pode adicionar aqui:
+            // else if (idClicado == R.id.nav_inicio) { return true; }
+
+            return false;
+        });
+
+        btnConfiguracoes.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent intent = new Intent(DashboardActivity.this, activityConfiguracoes.class);
+                startActivity(intent);
+            }
         });
     }
 }

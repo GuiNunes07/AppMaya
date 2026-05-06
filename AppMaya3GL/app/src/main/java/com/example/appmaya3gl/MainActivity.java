@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         // Componentes visuais //
         MaterialCardView cardAgendar = findViewById(R.id.card_agendar_inicial);
         MaterialCardView cardAreaPaciente = findViewById(R.id.card_area_paciente);
-        MaterialButton btnSejaPaciente = findViewById(R.id.btn_seja_paciente);
 
         // Animação //
         Animation slideUp = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         // Aplica a animação nos três elementos da tela //
         cardAgendar.startAnimation(slideUp);
         cardAreaPaciente.startAnimation(slideUp);
-        btnSejaPaciente.startAnimation(slideUp); // Botão animado também!
 
         // Para conhecimento: - Programação dos cliques, abaixo //
 
@@ -48,15 +46,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentDashboard = new Intent(MainActivity.this, DashboardActivity.class);
                 startActivity(intentDashboard);
-            }
-        });
-
-        // Clique do botão novo: Seja Paciente //
-        btnSejaPaciente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Como não temos a tela de cadastro, mostramos uma mensagem de acolhimento (DEVE CONTER CONTINUAÇÃO, NÃO ESQUECER) //
-                Toast.makeText(MainActivity.this, "Iniciando cadastro de novo paciente...", Toast.LENGTH_SHORT).show();
             }
         });
     }
