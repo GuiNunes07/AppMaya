@@ -32,13 +32,13 @@
         android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
         android:src="@drawable/maya_logo" /> <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Bem-vindo(a) à Maya RPG"
-    android:textAlignment="center"
-    android:textColor="@color/white"
-    android:textSize="24sp"
-    android:textStyle="bold" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo(a) à Maya RPG"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
@@ -53,6 +53,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Botões de acesso rápido"
+        android:textColor="@color/cinza_fundo"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_agendar_inicial"
