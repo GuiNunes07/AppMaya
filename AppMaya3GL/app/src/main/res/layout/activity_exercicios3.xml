@@ -85,7 +85,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- TROQUE AS IMAGENS DEPOIS -->
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="220dp"
                         android:layout_height="160dp"

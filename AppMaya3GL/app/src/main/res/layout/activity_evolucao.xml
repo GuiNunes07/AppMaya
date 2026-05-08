@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F9FA"
-    tools:context=".EvolucaoActivity">
+    tools:context=".activityEvolucao">
 
     <!-- BOTÃO DE VOLTAR -->
     <TextView
@@ -110,7 +110,6 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Setinha no meio -->
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -282,7 +281,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- BOTÃO FIXO NO RODAPÉ -->
+    <!-- RODAPÉ -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_compartilhar_evolucao"
         android:layout_width="match_parent"

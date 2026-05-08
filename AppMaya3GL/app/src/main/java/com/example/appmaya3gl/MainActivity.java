@@ -21,17 +21,12 @@ public class MainActivity extends AppCompatActivity {
         MaterialCardView cardAgendar = findViewById(R.id.card_agendar_inicial);
         MaterialCardView cardAreaPaciente = findViewById(R.id.card_area_paciente);
 
-        // Animação //
         Animation slideUp = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         slideUp.setDuration(1200);
 
-        // Aplica a animação nos três elementos da tela //
         cardAgendar.startAnimation(slideUp);
         cardAreaPaciente.startAnimation(slideUp);
 
-        // Para conhecimento: - Programação dos cliques, abaixo //
-
-        // Clique para ir para a tela de Agendamento
         cardAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentAgendamento);
             }
         });
-
-        // Clique para ir para a Área do Paciente //
+        
         cardAreaPaciente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

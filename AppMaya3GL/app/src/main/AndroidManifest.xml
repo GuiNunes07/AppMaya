@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMaya3GL">
         <activity
+            android:name=".activityAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmi"
+            android:exported="false" />
+        <activity
             android:name=".activityCadastro"
             android:exported="false" />
         <activity

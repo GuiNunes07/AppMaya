@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#1E1E24"
     tools:context=".activityCadastro">
-    <!-- O fundo #1E1E24 simula a foto escurecida -->
 
     <TextView
         android:id="@+id/btn_voltarCadastro"
@@ -26,7 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- ScrollView permite rolar a tela quando o teclado abrir -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

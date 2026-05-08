@@ -17,19 +17,19 @@ public class activityExercicios2 extends AppCompatActivity {
         TextView btnVoltar = findViewById(R.id.btn_voltar_ex2);
         MaterialButton btnConcluir = findViewById(R.id.btn_concluir_exercicio2);
 
-        // 2. Ação de Voltar
+
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Volta para a tela 1
+                finish(); // Volta para a tela 1 //
             }
         });
 
-        // 3. Ação de Concluir (Avança para a Tela 3)
+
         btnConcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Vai da Tela 2 para a Tela 3
+                // Vai da Tela 2 para a Tela 3 //
                 Intent intent = new Intent(activityExercicios2.this, activityExercicios3.class);
                 startActivity(intent);
             }

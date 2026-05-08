@@ -76,7 +76,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <!-- LINHA DIVISÓRIA -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -162,7 +161,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- BOTÃO INFERIOR: HISTÓRICO -->
+    <!-- BOTÃO INFERIOR: HISTÓRICO - (JOGA NOS RELATÓRIOS) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_historico_perfil"
         android:layout_width="match_parent"

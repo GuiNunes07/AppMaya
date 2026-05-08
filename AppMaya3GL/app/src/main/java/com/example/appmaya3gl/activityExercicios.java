@@ -28,7 +28,6 @@ public class activityExercicios extends AppCompatActivity {
         btnVoltar.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                // Fecha a tela de exercícios e volta
                 finish();
             }
         });

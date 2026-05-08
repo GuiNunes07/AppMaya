@@ -15,12 +15,10 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        // 1. Vinculando os botões da tela
         TextView btnVoltar = findViewById(R.id.btn_voltar_perfil);
         TextView btnTrocarSenha = findViewById(R.id.btn_grafico_evolucao);
         MaterialButton btnHistorico = findViewById(R.id.btn_historico_perfil);
 
-        // 2. Ação do Botão Voltar
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,7 +26,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        // 3. Ação do Botão Trocar Senha
         btnTrocarSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +34,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        // 4. Ação do Botão Histórico
         btnHistorico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

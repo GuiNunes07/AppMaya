@@ -19,9 +19,11 @@ public class activityConfiguracoes extends AppCompatActivity {
 
         TextView btnVoltar = findViewById(R.id.btn_voltar_config);
         MaterialButton btnSair = findViewById(R.id.btn_sair_conta);
+
+        // Switch = Ativar e desativar //
         Switch switchNotificacoes = findViewById(R.id.switch_notificacoes);
 
-        // 1. Ação de Voltar
+
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,20 +31,19 @@ public class activityConfiguracoes extends AppCompatActivity {
             }
         });
 
-        // 2. Ação de Sair da Conta
+
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(activityConfiguracoes.this, "Saindo da conta...", Toast.LENGTH_SHORT).show();
 
-                // Em breve, vamos direcionar para a tela de Login/Cadastro aqui!
-                // Para não dar erro agora, vamos mandar para a MainActivity.
                 Intent intent = new Intent(activityConfiguracoes.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Limpa as telas abertas
                 startActivity(intent);
             }
         });
-        // 3. Ação da Chave de Notificações
+
+        // Mensagens de notificação (imagináveis) //
         switchNotificacoes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) { // <- ESPAÇO ADICIONADO AQUI

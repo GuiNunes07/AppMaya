@@ -15,22 +15,17 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // =====================================================================
-        // 1. VINCULANDO OS ELEMENTOS DA TELA
-        // =====================================================================
+
         MaterialCardView cardExercicios = findViewById(R.id.card_dicas);
         MaterialCardView cardProntuario = findViewById(R.id.card_prontuario);
         MaterialCardView cardAgendar = findViewById(R.id.card_agendar);
         android.widget.ImageView fotoPerfil = findViewById(R.id.iv_profile_pic);
         android.widget.TextView btnVoltar = findViewById(R.id.btn_voltar4);
         android.widget.ImageView btnConfiguracoes = findViewById(R.id.iv_settings);
-
-        // Mantemos apenas UMA variável para a barra inferior
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        com.google.android.material.button.MaterialButton btnWhatsapp = findViewById(R.id.btn_whatsapp_contato);
 
-        // =====================================================================
-        // 2. CLIQUES NOS CARTÕES GIGANTES DO MEIO DA TELA
-        // =====================================================================
+        // Cards //
         cardExercicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,9 +50,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        // =====================================================================
-        // 3. CLIQUES NO TOPO (Botão de Voltar e Foto de Perfil)
-        // =====================================================================
+        // Voltar e ida ao perfil //
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,40 +66,33 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        // =====================================================================
-        // 4. MENU INFERIOR (Toda a lógica unificada aqui!)
-        // =====================================================================
+        // NAV //
         bottomNav.setOnItemSelectedListener(item -> {
 
             int idClicado = item.getItemId();
 
-            // Clicou em Exercícios
             if (idClicado == R.id.nav_exercicios) {
                 Intent intentNavExercicios = new Intent(DashboardActivity.this, activityExercicios.class);
                 startActivity(intentNavExercicios);
                 return true;
             }
 
-            // Clicou em Prontuário
             else if (idClicado == R.id.nav_historico) {
                 Intent intentNavProntuario = new Intent(DashboardActivity.this, ProntuarioActivity.class);
                 startActivity(intentNavProntuario);
                 return true;
             }
 
-            // Clicou em Perfil
             else if (idClicado == R.id.nav_perfil) {
                 Intent intentPerfil = new Intent(DashboardActivity.this, PerfilActivity.class);
                 startActivity(intentPerfil);
                 return true;
             }
 
-            // DICA: Se você tiver o botão "Início/Dashboard", você pode adicionar aqui:
-            // else if (idClicado == R.id.nav_inicio) { return true; }
-
             return false;
         });
 
+        // Configs //
         btnConfiguracoes.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
@@ -114,5 +100,52 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Config mensagem direto para a Maya (IA) //
+        btnWhatsapp.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+
+                // Número da Maya //
+                String numeroMaya = "55 11 998820868";
+
+                // Mensagem automática //
+                String mensagemAutomatica = "Olá, Dra. Maya! Gostaria de tirar uma dúvida com você!";
+
+                // Link ZAP //
+                String urlWhatsapp = "https://wa.me/" + numeroMaya + "?text=" + android.net.Uri.encode(mensagemAutomatica);
+
+                android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_VIEW);
+                intent.setData(android.net.Uri.parse(urlWhatsapp));
+
+                // O bloco try/catch é uma rede de segurança, mesma lógica do full stack. //
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    android.widget.Toast.makeText(DashboardActivity.this, "Erro ao abrir o WhatsApp. Verifique se ele está instalado.", android.widget.Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
+
+    // Tentando aplicar o progresso do treino finalizado para a barrinha "Gameficação" //
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        android.widget.ProgressBar progressBar = findViewById(R.id.progress_bar);
+        android.widget.TextView tvProgressPercent = findViewById(R.id.tv_progresso_valor);
+
+        android.content.SharedPreferences prefs = getSharedPreferences("MayaPrefs", MODE_PRIVATE);
+
+        int progressoSalvo = prefs.getInt("total_progress", 33);
+
+        // Define o preenchimento da barrinha //
+        progressBar.setProgress(progressoSalvo);
+
+        // Define o texto do percentual //
+        tvProgressPercent.setText(progressoSalvo + "%");
+    }
+
+
 }

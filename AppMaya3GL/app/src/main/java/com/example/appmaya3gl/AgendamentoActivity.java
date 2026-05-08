@@ -25,7 +25,6 @@ public class AgendamentoActivity extends AppCompatActivity {
         btnVoltar.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                // Fecha a tela atual e volta para a anterior
                 finish();
             }
         });
@@ -37,7 +36,7 @@ public class AgendamentoActivity extends AppCompatActivity {
                         "Agendamento realizado com sucesso!",
                         android.widget.Toast.LENGTH_LONG).show();
 
-                // Voltar para o Dashboard após agendar --
+                // Voltar para o Dashboard após agendar --- AQUI SERÁ OUTRA ACTIVITY PARA CONFIRMAÇÃO DE AGENDAMENTO //
                 finish();
             }
         });
