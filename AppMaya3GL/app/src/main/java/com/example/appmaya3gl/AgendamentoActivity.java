@@ -29,20 +29,33 @@ public class AgendamentoActivity extends AppCompatActivity {
         android.widget.TextView btnVoltar = findViewById(R.id.btn_voltar);
 
         // Chip (Horários disponíveis, programados no xml) //
+        Chip chip0800 = findViewById(R.id.chip_0800);
+        Chip chip0900 = findViewById(R.id.chip_0900);
         Chip chip1030 = findViewById(R.id.chip_1030);
         Chip chip1400 = findViewById(R.id.chip_1400);
         Chip chip1530 = findViewById(R.id.chip_1530);
         Chip chip1700 = findViewById(R.id.chip_1700);
 
+        if (chip0800 != null) {
+            chip0800.setOnClickListener(v -> horarioSelecionado = "08:00");
+        }
+
+        if (chip0900 != null) {
+            chip0900.setOnClickListener(v -> horarioSelecionado = "09:00");
+        }
+
         if (chip1030 != null) {
             chip1030.setOnClickListener(v -> horarioSelecionado = "10:30");
         }
+
         if (chip1400 != null) {
             chip1400.setOnClickListener(v -> horarioSelecionado = "14:00");
         }
+
         if (chip1530 != null) {
             chip1530.setOnClickListener(v -> horarioSelecionado = "15:30");
         }
+
         if (chip1700 != null) {
             chip1700.setOnClickListener(v -> horarioSelecionado = "17:00");
         }
