@@ -79,7 +79,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <!-- Caixas de horários disponíveis -->
+            <!-- Horários disponíveis -->
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chip_group_horarios"
                 android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                 app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_0800"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,30 +96,35 @@
                     app:chipBackgroundColor="@color/white" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_0900"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="09:00" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1030"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10:30" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1400"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="14:00" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1530"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15:30" />
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1700"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

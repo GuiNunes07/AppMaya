@@ -18,6 +18,8 @@ public class activityAdmin extends AppCompatActivity {
         ImageView btnLogout = findViewById(R.id.iv_logout_admin);
         MaterialCardView btnProntuarios = findViewById(R.id.card_admin_prontuarios);
         MaterialCardView btnExercicios = findViewById(R.id.card_admin_exercicios);
+        com.google.android.material.card.MaterialCardView btnAgenda = findViewById(R.id.card_admin_agenda);
+        com.google.android.material.card.MaterialCardView btnComunicados = findViewById(R.id.card_admin_comunicados);
 
         // Sair do admin //
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -34,15 +36,37 @@ public class activityAdmin extends AppCompatActivity {
         btnProntuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activityAdmin.this, "Abrindo lista de pacientes...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(activityAdmin.this, activityProntuarioAdmin.class);
+                startActivity(intent);
             }
         });
 
-        btnExercicios.setOnClickListener(new View.OnClickListener() {
+
+        btnExercicios.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(activityAdmin.this, "Tela de cadastro de exercícios em breve", Toast.LENGTH_SHORT).show();
+            public void onClick(android.view.View v) {
+                android.content.Intent intent = new android.content.Intent(activityAdmin.this, activityExerciciosAdmin.class);
+                startActivity(intent);
             }
         });
+
+        btnAgenda.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                // Vamos criar a tela activityAgendaAdmin no Passo 3!
+                android.content.Intent intent = new android.content.Intent(activityAdmin.this, activityAgendaAdmin.class);
+                startActivity(intent);
+            }
+        });
+
+        btnComunicados.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                // Vamos criar a classe activityComunicadosAdmin no Passo 3!
+                android.content.Intent intent = new android.content.Intent(activityAdmin.this, activityComunicadosAdmin.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

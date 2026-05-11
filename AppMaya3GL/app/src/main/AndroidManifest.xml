@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMaya3GL">
         <activity
+            android:name=".activityComunicadosAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".activityAgendaAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".activityExerciciosAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".activityProntuarioAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".activityConfirmacaoAgendamento"
+            android:exported="false" />
+        <activity
             android:name=".activityAdmin"
             android:exported="false" />
         <activity
