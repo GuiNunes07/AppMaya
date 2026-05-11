@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProntuarioActivity extends AppCompatActivity {
 
-    // BASTANTE COISA PARA MUDAR AQUI - PRONTUÁRIOS //
+    // PRONTUÁRIOS //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
