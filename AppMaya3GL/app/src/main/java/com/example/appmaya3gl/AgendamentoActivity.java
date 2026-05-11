@@ -11,12 +11,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
-// IMPORTAÇÃO NECESSÁRIA PARA LER OS SEUS CHIPS
+
 import com.google.android.material.chip.Chip;
 
 public class AgendamentoActivity extends AppCompatActivity {
 
-    // Variável para guardar a hora que o paciente tocar
+    // Variável para guardar a hora que o paciente tocar //
     private String horarioSelecionado = "";
 
     @Override
